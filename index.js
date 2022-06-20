@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}));
 const testRoutes = require('./routes/testdata');
 
-app.use(testRoutes );
+app.use("/",testRoutes);
 // prevent cors error on frontend
 const server = app.listen(port , function () {
    console.log("Server running at port 80")

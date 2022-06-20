@@ -8,4 +8,5 @@ router.get('/administradores', testarBD.getAdministradores);
 router.get("/alunos", testarBD.getAlunos);
 router.get("/cursos", testarBD.getCursos);
 
+
 module.exports = router;
