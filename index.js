@@ -14,8 +14,8 @@ const testRoutes = require('./routes/testdata');
 
 app.use(testRoutes );
 // prevent cors error on frontend
-const server = app.listen(3003, function () {
-   console.log("Server running at port 3003")
+const server = app.listen(80, function () {
+   console.log("Server running at port 80")
 })
 
 
