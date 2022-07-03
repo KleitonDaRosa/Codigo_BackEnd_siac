@@ -8,7 +8,7 @@ module.exports = {
         });
     },
 
-    getAlunos: async (req, res) => {
+    getAlunos: async (req, res) => {console.log("REQ")
         pool.query('Select * from aluno').then((testData) => {
             res.send(testData.rows);
         });
