@@ -27,5 +27,17 @@ module.exports = {
         pool.query(query, [curso, 4, estado]).then((data) => {
             res.send(data.rows[0]);
         });
+    },
+
+    removeCursos: async (req, res)=>{
+        const {id} = req.query;
+        const query = "DELETE FROM curso WHERE id_curso=$1"
+        pool.query(query, [id]).then((data) => {
+           if(data.rowCount > 0){
+               res.send(true);
+           }else{
+               res.send(false);
+           }
+        });
     }
 }

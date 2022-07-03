@@ -7,6 +7,7 @@ router.use(express.json())
 router.get('/administradores', testarBD.getAdministradores);
 router.get("/alunos", testarBD.getAlunos);
 router.get("/cursos", testarBD.getCursos);
+router.delete("/cursos",testarBD.removeCursos);
 router.post("/cursos", testarBD.setCursos);
 
 
