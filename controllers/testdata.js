@@ -20,11 +20,12 @@ module.exports = {
         });
     },
 
-    criarCurso: async (req, res) => {
-      const { curso,estado } = req.body;
-      const query = "INSERT INTO curso(nome_curso,numero_de_anos,estado_curso) VALUES ($1,$2,$3) RETURNING id_curso,nome_curso,numero_de_anos,estado_curso"
-      pool.query(query,[curso,4,estado] ).then((data) => {
-          res.send(data.rows[0]);
-      });
+    setCursos: async (req, res) => {
+
+        const {curso, estado} = req.body;
+        const query = "INSERT INTO curso(nome_curso,numero_de_anos,estado_curso) VALUES ($1,$2,$3) RETURNING id_curso,nome_curso,numero_de_anos,estado_curso"
+        pool.query(query, [curso, 4, estado]).then((data) => {
+            res.send(data.rows[0]);
+        });
     }
 }
